@@ -1,7 +1,7 @@
 # coding=utf8
 import unittest
-from html_telegraph_poster.converter import convert_html_to_telegraph_format
-from html_telegraph_poster.converter import convert_json_to_html
+from html_telegraph_poster_v2.converter import convert_html_to_telegraph_format
+from html_telegraph_poster_v2.converter import convert_json_to_html
 import json
 
 

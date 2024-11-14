@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0d902358-28c8-4dd8-80db-b392bbdd7483" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/create_account.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/html_to_telegraph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/upload_images.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/converter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/errors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/create_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/create_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/html_to_telegraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/html_to_telegraph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/upload_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/upload_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_htp.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_htp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_utils.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2orCjeRjjK9WmJBUma1OamP7l3o" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ATurr/OneDrive/programming/python/html-telegraph-poster/html_telegraph_poster&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ATurr\OneDrive\programming\python\html-telegraph-poster\html_telegraph_poster" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.19072.16" />
+        <option value="bundled-python-sdk-8336bb23522e-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.19072.16" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d902358-28c8-4dd8-80db-b392bbdd7483" name="Changes" comment="" />
+      <created>1731618444283</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731618444283</updated>
+      <workItem from="1731618445881" duration="1314000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

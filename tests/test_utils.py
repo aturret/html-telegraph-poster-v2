@@ -1,7 +1,7 @@
 # coding=utf8
 
 import unittest
-from html_telegraph_poster.utils import DocumentPreprocessor
+from html_telegraph_poster_v2.utils import DocumentPreprocessor
 
 
 class DocumentPreprocessorImageUploadTest(unittest.TestCase):

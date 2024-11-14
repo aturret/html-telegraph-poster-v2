@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "html-telegraph-poster-v2"
+version = "0.1.0"
+description = "Upload HTML document to telegra.ph"
+authors = ["aturret <enturreopy@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+lxml = "^4.7.1"
+requests = "^2.26.0"
+requests_toolbelt = "^0.9.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

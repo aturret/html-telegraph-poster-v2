@@ -1,8 +1,8 @@
 # coding=utf8
 import unittest
-from html_telegraph_poster.upload_images import upload_image, _get_mimetype_from_response_headers
-from html_telegraph_poster.upload_images import GetImageRequestError
-from html_telegraph_poster import TelegraphPoster
+from html_telegraph_poster_v2.upload_images import upload_image, _get_mimetype_from_response_headers
+from html_telegraph_poster_v2.upload_images import GetImageRequestError
+from html_telegraph_poster_v2 import TelegraphPoster
 
 
 class UploadImageTest(unittest.TestCase):

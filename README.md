@@ -20,12 +20,14 @@ pip install html-telegraph-poster
 ```
 
 ## Usage
+
 ```python
->>> from html_telegraph_poster import TelegraphPoster
->>> t = TelegraphPoster(use_api=True)
->>> t.create_api_token('Elon Musk', 'Elon', 'https://www.spacex.com/') # second and third params are optional
-{'access_token': '9f3bab568f*************', 'auth_url': 'https://edit.telegra.ph/auth/HFYo***********', 'author_name': 'Elon', 'short_name': 'Elon Musk', 'author_url': 'https://www.spacex.com/'}
->>> t.post(title='Just another funny joke', author='by me', text='<blockquote>Really hard way</blockquote>')
+>> > from html_telegraph_poster_v2 import TelegraphPoster
+>> > t = TelegraphPoster(use_api=True)
+>> > t.create_api_token('Elon Musk', 'Elon', 'https://www.spacex.com/')  # second and third params are optional
+{'access_token': '9f3bab568f*************', 'auth_url': 'https://edit.telegra.ph/auth/HFYo***********',
+ 'author_name': 'Elon', 'short_name': 'Elon Musk', 'author_url': 'https://www.spacex.com/'}
+>> > t.post(title='Just another funny joke', author='by me', text='<blockquote>Really hard way</blockquote>')
 {'path': 'Just-another-funny-joke-06-05-4', 'url': 'http://telegra.ph/Just-another-funny-joke-06-05-4'}
 ```
 ##### Use graph.org instead of telegra.ph
@@ -53,9 +55,10 @@ python -m html_telegraph_poster.create_account "Elon Musk" "Elon" "https://www.s
 ```
 
 ## Uploading images
+
 ```python
 
-from html_telegraph_poster.upload_images import upload_image
+from html_telegraph_poster_v2.upload_images import upload_image
 
 # upload file
 upload_image("file_path.jpg")
@@ -70,12 +73,13 @@ upload_image("http://example.com/img.png", get_timeout=(5, 5), upload_timeout=(5
 ## Utils module
 Utils module provides ability to make some pre-process steps before document is passed to the converter.
 #### Uploading all images to the telegra.ph
+
 ```python
-from html_telegraph_poster.utils import DocumentPreprocessor
+from html_telegraph_poster_v2.utils import DocumentPreprocessor
 
 dp = DocumentPreprocessor(html_string)
 dp.upload_all_images()
-dp.get_processed_html() # this should return html string with uploaded and replaced image urls
+dp.get_processed_html()  # this should return html string with uploaded and replaced image urls
 ```
 Optionally you can pass base_url if the document contains images with relative paths
 ```python

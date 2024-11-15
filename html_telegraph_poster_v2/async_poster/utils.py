@@ -29,7 +29,10 @@ class DocumentPreprocessor:
         self.input_document = input_document
         self.parsed_document = self._parse_document()
         self.image_uploader_type: str = image_uploader
-        self.image_uploader: Optional[ImageUploader] = uploader_list.get(image_uploader)()
+        if image_uploader:
+            self.image_uploader: ImageUploader = uploader_list.get(image_uploader)()
+        else:
+            self.image_uploader = None
 
     def get_processed_html(self):
         return lxml.html.tostring(self.parsed_document, encoding="unicode")

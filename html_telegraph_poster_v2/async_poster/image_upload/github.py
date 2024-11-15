@@ -3,7 +3,7 @@ import os.path
 
 import httpx
 
-from html_telegraph_poster_v2.async_poster.image_upload import ImageUploader
+from html_telegraph_poster_v2.async_poster.image_upload.image_uploader import ImageUploader
 from html_telegraph_poster_v2.config import GITHUB_REPO, GITHUB_BRANCH, GITHUB_PATH, GITHUB_COMMIT_MESSAGE
 from html_telegraph_poster_v2.utils.logger import logger
 from html_telegraph_poster_v2.utils.parse import check_url_is_local

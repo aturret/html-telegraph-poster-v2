@@ -12,7 +12,7 @@ import httpx
 from botocore.exceptions import ClientError
 
 from html_telegraph_poster_v2.utils.logger import logger
-from . import ImageUploader
+from .image_uploader import ImageUploader
 from html_telegraph_poster_v2.config import AWS_S3_BUCKET_NAME, AWS_REGION_NAME, AWS_DOMAIN_HOST, AWS_ACCESS_KEY_ID, \
     AWS_SECRET_ACCESS_KEY, AWS_S3_OBJECT_KEY
 from ...utils.parse import check_url_is_local

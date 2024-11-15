@@ -3,7 +3,8 @@ from typing import Optional, Union
 from urllib.parse import urlparse, urljoin
 import logging
 
-from .image_upload import ImageUploader, uploader_list
+from .image_upload import uploader_list
+from .image_upload.image_uploader import ImageUploader
 from .upload_images import upload_image
 from .converter import _fragments_from_string
 import lxml.html

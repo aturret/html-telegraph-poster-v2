@@ -60,6 +60,7 @@ Since telegra.ph is not support media uploading anymore, you can configure an im
 Current supported services:
 
 - AWS S3
+- GitHub
 
 ```
 ## Utils module
@@ -81,8 +82,8 @@ dp.get_processed_html()
 
 ## Roadmap
 
-- [ ] rewrite the
+- [ ] rewrite the command line interface for simple usage
 - [ ] add automated test pipeline
 - [ ] add more services for media uploading
   - [ ] imgur
-  - [ ] github
+  - [ ] google drive

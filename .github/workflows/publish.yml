@@ -35,7 +35,14 @@ jobs:
       - name: Build the package
         run: poetry build
 
+      - name: Verify PyPI Token
+        run: echo "PyPI Token is available"
+        env:
+          DUMMY_ENV: ${{ secrets.PYPI_TOKEN }}
+
       - name: Publish to PyPI
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
-        run: poetry publish
+        run:
+          set -x
+          poetry publish

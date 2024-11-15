@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d902358-28c8-4dd8-80db-b392bbdd7483" name="Changes" comment="" />
+    <list default="true" id="0d902358-28c8-4dd8-80db-b392bbdd7483" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731618444283</updated>
       <workItem from="1731618445881" duration="2548000" />
-      <workItem from="1731636685590" duration="7789000" />
+      <workItem from="1731636685590" duration="8109000" />
     </task>
     <servers />
   </component>

@@ -12,7 +12,6 @@ from .converter import (
     convert_json_to_html,
     OutputFormat,
 )
-from .image_upload import ImageUploader
 from .utils import DocumentPreprocessor
 from ..config import DEFAULT_USER_AGENT
 

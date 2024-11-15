@@ -4,33 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d902358-28c8-4dd8-80db-b392bbdd7483" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/html-telegraph-poster.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/image_upload/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/image_upload/aws.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/image_upload/github.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/image_upload/imgur.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/utils/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/utils/parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/python-package.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/python-publish.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/create_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/create_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/errors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/html_to_telegraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/html_to_telegraph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/upload_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/upload_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-    </list>
+    <list default="true" id="0d902358-28c8-4dd8-80db-b392bbdd7483" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731618444283</updated>
       <workItem from="1731618445881" duration="2548000" />
-      <workItem from="1731636685590" duration="7478000" />
+      <workItem from="1731636685590" duration="7789000" />
     </task>
     <servers />
   </component>

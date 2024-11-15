@@ -41,12 +41,11 @@ def _get_mimetype_from_response_headers(headers):
 
 async def upload_image(
         file_name_or_url,
-        user_agent='Python_telegraph_poster/0.1',
+        user_agent='Python_html_telegraph_poster_v2/0.1',
         return_json=False,
         get_timeout=(10.0, 10.0),
         upload_timeout=(7.0, 7.0)
-    ):
-
+):
     if hasattr(file_name_or_url, 'read') and hasattr(file_name_or_url, 'name'):
         img = file_name_or_url
         img_content_type = mimetypes.guess_type(file_name_or_url.name)[0]

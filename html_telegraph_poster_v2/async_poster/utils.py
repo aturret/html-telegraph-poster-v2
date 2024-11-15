@@ -1,43 +1,49 @@
 # coding=utf8
-
+from typing import Optional, Union
 from urllib.parse import urlparse, urljoin
 import logging
+
+from .image_upload import ImageUploader, uploader_list
 from .upload_images import upload_image
 from .converter import _fragments_from_string
 import lxml.html
 import concurrent.futures
 
-from app.services.amazon.s3 import download_and_upload as upload_image_to_s3
-from app.config import (
+from html_telegraph_poster_v2.utils.logger import logger
+from html_telegraph_poster_v2.config import (
     AWS_ACCESS_KEY_ID,
     AWS_SECRET_ACCESS_KEY,
-    AWS_S3_BUCKET_NAME, AWS_STORAGE_ON,
+    AWS_S3_BUCKET_NAME,
 )
-from ...utils.logger import logger
 
 LOG = logging.getLogger(__name__)
 
 
 class DocumentPreprocessor:
-    def __init__(self, input_document, url: str = None):
+    def __init__(self,
+                 input_document: Union[str | lxml.html.HtmlMixin],
+                 url: str = None,
+                 image_uploader: str = None):
         self.url = url
         self.input_document = input_document
         self.parsed_document = self._parse_document()
+        self.image_uploader_type: str = image_uploader
+        self.image_uploader: Optional[ImageUploader] = uploader_list.get(image_uploader)()
 
     def get_processed_html(self):
         return lxml.html.tostring(self.parsed_document, encoding="unicode")
 
     @staticmethod
-    async def _upload_image(url):
+    async def _upload_image(url, image_uploader: ImageUploader, **kwargs):
         new_image_url = None
-        # try:
-        #     new_image_url = await upload_image(url)
-        # except Exception:
-        #     logger.error(f"Could not upload image {url}")
+        try:
+            new_image_url = await image_uploader.upload_image(url, **kwargs)
+        except Exception:
+            logger.error(f"Could not upload image {url}")
 
         return new_image_url
 
-    async def upload_all_images(self, base_url=None):
+    async def upload_all_images(self, base_url=None, **kwargs):
         self._make_links_absolute(base_url)
         images = self.parsed_document.xpath(
             './/img[@src][not(contains(@src, "//telegra.ph/file/")) and'
@@ -46,17 +52,12 @@ class DocumentPreprocessor:
 
         for image in images:
             logger.debug(f"Uploading image {image.attrib.get('src')}")
-            await DocumentPreprocessor._upload_and_replace_url(image, url=self.url)
+            await DocumentPreprocessor._upload_and_replace_url(image, url=self.url, image_uploader=self.image_uploader, **kwargs)
 
     @staticmethod
-    async def _upload_and_replace_url(image_element, url: str = None):
+    async def _upload_and_replace_url(image_element, url: str = None, image_uploader: ImageUploader = None):
         old_image_url = image_element.attrib.get("src")
-        if AWS_STORAGE_ON:
-            new_image_url = await DocumentPreprocessor._upload_image_to_s3(
-                old_image_url, url=url
-            )
-        else:
-            new_image_url = await DocumentPreprocessor._upload_image(old_image_url)
+        new_image_url = await DocumentPreprocessor._upload_image(old_image_url, image_uploader)
         if new_image_url:
             image_element.attrib.update({"src": new_image_url})
 
@@ -101,12 +102,3 @@ class DocumentPreprocessor:
                 return None
 
         body.rewrite_links(link_repl_func=link_replace, base_href=output_base)
-
-    @staticmethod
-    async def _upload_image_to_s3(old_image_url, url: str = None):
-        new_image_url = None
-        try:
-            new_image_url = await upload_image_to_s3(old_image_url, referer=url, suite="images")
-        except Exception as e:
-            logger.error(f"Could not upload image {old_image_url}\nError: {e}")
-        return new_image_url

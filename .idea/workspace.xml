@@ -5,31 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d902358-28c8-4dd8-80db-b392bbdd7483" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/create_account.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/html_to_telegraph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/upload_images.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/converter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/html-telegraph-poster.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/image_upload/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/image_upload/aws.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/image_upload/github.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/image_upload/imgur.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/utils/logger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/utils/parse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/python-package.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/python-publish.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/create_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/create_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async/errors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/html_to_telegraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/html_to_telegraph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/upload_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/upload_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_telegraph_poster/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_htp.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_htp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/create_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/create_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/html_to_telegraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/html_to_telegraph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/upload_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/upload_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_telegraph_poster_v2/async/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/html_telegraph_poster_v2/async_poster/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,6 +68,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ATurr/OneDrive/programming/python/html-telegraph-poster/html_telegraph_poster&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -52,6 +76,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -76,7 +101,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731618444283</updated>
-      <workItem from="1731618445881" duration="1314000" />
+      <workItem from="1731618445881" duration="2548000" />
+      <workItem from="1731636685590" duration="7478000" />
     </task>
     <servers />
   </component>

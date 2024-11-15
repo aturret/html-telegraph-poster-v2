@@ -1,6 +1,8 @@
 # encoding=utf8
 import json
 import os
+from typing import Optional
+
 import requests
 import httpx
 from requests_toolbelt import MultipartEncoder
@@ -10,24 +12,27 @@ from .converter import (
     convert_json_to_html,
     OutputFormat,
 )
+from .image_upload import ImageUploader
+from .utils import DocumentPreprocessor
+from ..config import DEFAULT_USER_AGENT
 
-base_url = "http://telegra.ph"
-save_url = "https://edit.telegra.ph/save"
-api_url = "https://api.telegra.ph"
-default_user_agent = "Python_telegraph_poster/0.1"
+TELEGRAPH_URL = "http://telegra.ph"
+TELEGRAPH_SAVE_URL = "https://edit.telegra.ph/save"
+TELEGRAPH_API_URL = "https://api.telegra.ph"
+default_user_agent = DEFAULT_USER_AGENT
 
 
 async def _upload(
-    title,
-    author,
-    text,
-    author_url="",
-    tph_uuid=None,
-    page_id=None,
-    user_agent=default_user_agent,
-    convert_html=True,
-    clean_html=True,
-    telegraph_base_url=base_url,
+        title,
+        author,
+        text,
+        author_url="",
+        tph_uuid=None,
+        page_id=None,
+        user_agent=default_user_agent,
+        convert_html=True,
+        clean_html=True,
+        telegraph_base_url=TELEGRAPH_URL,
 ):
     if not title:
         raise TitleRequiredError("Title is required")
@@ -60,7 +65,7 @@ async def _upload(
     retries = httpx.Limits(max_keepalive_connections=3, max_connections=10)
     async with httpx.AsyncClient(timeout=timeout, limits=retries) as client:
         response = await client.post(
-            save_url, headers=headers, cookies=cookies, content=m.to_string()
+            TELEGRAPH_SAVE_URL, headers=headers, cookies=cookies, content=m.to_string()
         )
         result = json.loads(response.text)
         if "path" in result:
@@ -73,21 +78,20 @@ async def _upload(
 
 
 def _prepare_page_upload_params(params):
-    # significantly reduce size of request body
     return json.dumps(params, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
 
 
 async def _upload_via_api(
-    title,
-    author,
-    text,
-    author_url="",
-    access_token=None,
-    user_agent=default_user_agent,
-    convert_html=True,
-    clean_html=True,
-    path=None,
-    telegraph_api_url=api_url,
+        title,
+        author,
+        text,
+        author_url="",
+        access_token=None,
+        user_agent=default_user_agent,
+        convert_html=True,
+        clean_html=True,
+        path=None,
+        telegraph_api_url=TELEGRAPH_API_URL,
 ):
     if not title:
         raise TitleRequiredError("Title is required")
@@ -125,7 +129,6 @@ async def _upload_via_api(
             content=_prepare_page_upload_params(params),
             headers=request_headers,
         )
-    # resp = requests.post(telegraph_api_url + method, data=_prepare_page_upload_params(params), headers=request_headers).json()
     resp = resp.json()
     if resp["ok"] is True:
         return resp.get("result")
@@ -135,7 +138,7 @@ async def _upload_via_api(
 
 
 async def create_api_token(
-    short_name, author_name=None, author_url=None, user_agent=default_user_agent
+        short_name, author_name=None, author_url=None, user_agent=default_user_agent
 ):
     params = {
         "short_name": short_name,
@@ -146,7 +149,7 @@ async def create_api_token(
         params.update({"author_url": author_url})
     async with httpx.AsyncClient() as client:
         resp = await client.get(
-            api_url + "/createAccount",
+            TELEGRAPH_API_URL + "/createAccount",
             params=params,
             headers={"User-Agent": user_agent},
         )
@@ -156,13 +159,13 @@ async def create_api_token(
 
 
 async def upload_to_telegraph(
-    title,
-    author,
-    text,
-    author_url="",
-    tph_uuid=None,
-    page_id=None,
-    user_agent=default_user_agent,
+        title,
+        author,
+        text,
+        author_url="",
+        tph_uuid=None,
+        page_id=None,
+        user_agent=default_user_agent,
 ):
     result = await _upload(
         title, author, text, author_url, tph_uuid, page_id, user_agent
@@ -172,16 +175,17 @@ async def upload_to_telegraph(
 
 class AsyncTelegraphPoster(object):
     def __init__(
-        self,
-        tph_uuid=None,
-        page_id=None,
-        user_agent=default_user_agent,
-        clean_html=True,
-        convert_html=True,
-        use_api=False,
-        access_token=None,
-        telegraph_api_url=api_url,
-        telegraph_base_url=base_url,
+            self,
+            tph_uuid=None,
+            page_id=None,
+            user_agent=default_user_agent,
+            clean_html: bool = True,
+            convert_html: bool = True,
+            use_api: bool = False,
+            access_token: str = None,
+            telegraph_api_url: str = TELEGRAPH_API_URL,
+            telegraph_base_url: str = TELEGRAPH_URL,
+            image_uploader: str = None,
     ):
         self.title = None
         self.author = None
@@ -198,6 +202,7 @@ class AsyncTelegraphPoster(object):
         self.use_api = use_api
         self.telegraph_api_url = telegraph_api_url
         self.telegraph_base_url = telegraph_base_url
+        self.image_uploader = image_uploader
         if self.access_token:
             # use api anyway
             self.use_api = True
@@ -222,6 +227,8 @@ class AsyncTelegraphPoster(object):
         self.author = author
         self.author_url = author_url
         self.text = text
+        if self.image_uploader is not None:
+            await self._preprocess_text()
         result = await self.edit()
         if not self.use_api:
             self.tph_uuid = result["tph_uuid"]
@@ -393,3 +400,9 @@ class AsyncTelegraphPoster(object):
 
     async def set_token(self, token: str):
         self.access_token = token
+
+    async def _preprocess_text(self) -> None:
+        preprocessor = DocumentPreprocessor(input_document=self.text, image_uploader=self.image_uploader)
+        if self.image_uploader:
+            await preprocessor.upload_all_images()
+

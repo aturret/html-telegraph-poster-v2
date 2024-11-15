@@ -1,7 +1,11 @@
 [![build](https://github.com/mercuree/html-telegraph-poster/actions/workflows/python-package.yml/badge.svg)](https://github.com/mercuree/html-telegraph-poster/actions/workflows/python-package.yml)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/html-telegraph-poster?master)](https://pypi.org/project/html-telegraph-poster/)
 
-# Python html to telegra.ph poster
+# Python html to telegra.ph poster V2
+
+Forked from [html-telegraph-poster](https://github.com/mercuree/html-telegraph-poster) by [mercuree](https://github.com/mercuree/).
+
+Added async support and fixed some bugs (Because my projects need it). New features will be added soon.
 
 Simple python function to post plain html text to https://telegra.ph/.
 Telegra.ph allows `<a>, <blockquote>, <br>, <em>, <figure>, <h3>, <h4>, <img>, <p>, <strong>, ` elements.
@@ -9,14 +13,9 @@ It also supports embedded youtube and vimeo iframe tags.
 
 About telegram telegra.ph service https://telegram.org/blog/instant-view
 
-## Requirements
-* lxml
-* requests
-* requests_toolbelt
-
 ## Installation
 ```Shell
-pip install html-telegraph-poster
+pip install html-telegraph-poster-v2
 ```
 
 ## Usage
@@ -51,23 +50,16 @@ This command will generate .env file or append  TELEGRAPH_ACCESS_TOKEN at the en
 Note: script will not set environment variable. You can use [python-dotenv](https://github.com/theskumar/python-dotenv),
 set it manually or hardcode it when call `TelegraphPoster(access_token='access_token_string')`
 ```Shell
-python -m html_telegraph_poster.create_account "Elon Musk" "Elon" "https://www.spacex.com/"
+python -m html_telegraph_poster_v2.create_account "Elon Musk" "Elon" "https://www.spacex.com/"
 ```
 
 ## Uploading images
 
-```python
+Since telegra.ph is not support media uploading anymore, you can configure an image/video storage service.
 
-from html_telegraph_poster_v2.upload_images import upload_image
+Current supported services:
 
-# upload file
-upload_image("file_path.jpg")
-
-# upload url
-upload_image("http://example.com/img.png")
-
-# setting request and response timeout
-upload_image("http://example.com/img.png", get_timeout=(5, 5), upload_timeout=(5, 5))
+- AWS S3
 
 ```
 ## Utils module
@@ -86,3 +78,11 @@ Optionally you can pass base_url if the document contains images with relative p
 dp.upload_all_images(base_url='https://example.com')
 dp.get_processed_html() 
 ``` 
+
+## Roadmap
+
+- [ ] rewrite the
+- [ ] add automated test pipeline
+- [ ] add more services for media uploading
+  - [ ] imgur
+  - [ ] github

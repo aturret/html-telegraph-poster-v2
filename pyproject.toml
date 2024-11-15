@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "html-telegraph-poster-v2"
-version = "0.1.0"
+version = "0.1.1"
 description = "Upload HTML document to telegra.ph"
 authors = ["aturret <enturreopy@gmail.com>"]
 license = "MIT"

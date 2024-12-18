@@ -4,7 +4,7 @@ updates:
     directory: "/" # Path to your project root where pyproject.toml is located
     schedule:
       interval: "daily" # Check for updates daily
-    versioning-strategy: "increase"
+    versioning-strategy: "increase-if-necessary"
     ignore:
       - dependency-name: "python" # Optional: Ignore updates to Python itself
     commit-message:

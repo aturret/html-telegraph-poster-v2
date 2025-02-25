@@ -2,39 +2,39 @@
 
 [[package]]
 name = "aioboto3"
-version = "13.4.0"
+version = "14.0.0"
 description = "Async boto3 wrapper"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "aioboto3-13.4.0-py3-none-any.whl", hash = "sha256:d78f3400ef3a01b4d5515108ef244941894a0bc39c4716321a00e15898d7e002"},
-    {file = "aioboto3-13.4.0.tar.gz", hash = "sha256:3105f9e5618c686c90050e60eb5ebf9e28f7f8c4e0fa162d4481aaa402008aab"},
+    {file = "aioboto3-14.0.0-py3-none-any.whl", hash = "sha256:d034fb7877be1caf7997b01286ecc6e79938e7be64d600637d6a9cc38d25c03f"},
+    {file = "aioboto3-14.0.0.tar.gz", hash = "sha256:32a4df1585c3b90bd758bb7c2396149e90e58f062838af0db8d0fabd5bb66d6d"},
 ]
 
 [package.dependencies]
-aiobotocore = {version = "2.18.0", extras = ["boto3"]}
+aiobotocore = {version = "2.20.0", extras = ["boto3"]}
 aiofiles = ">=23.2.1"
 
 [package.extras]
 chalice = ["chalice (>=1.24.0)"]
-s3cse = ["cryptography (>=2.3.1)"]
+s3cse = ["cryptography (>=44.0.1)"]
 
 [[package]]
 name = "aiobotocore"
-version = "2.18.0"
+version = "2.20.0"
 description = "Async client for aws services using botocore and aiohttp"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "aiobotocore-2.18.0-py3-none-any.whl", hash = "sha256:89634470946944baf0a72fe2939cdd5f98b61335d400ca55f3032aca92989ec1"},
-    {file = "aiobotocore-2.18.0.tar.gz", hash = "sha256:c54db752c5a742bf1a05c8359a93f508b4bf702b0e6be253a4c9ef1f9c9b6706"},
+    {file = "aiobotocore-2.20.0-py3-none-any.whl", hash = "sha256:02d9d727355a03f83ee1a4fc91f2fd14966862144b4d2cc3434181e82dfafd83"},
+    {file = "aiobotocore-2.20.0.tar.gz", hash = "sha256:8902d8a96e3a389c99a68d23e2ca07c8d5059439c2a55acf28a8af19e65fe293"},
 ]
 
 [package.dependencies]
 aiohttp = ">=3.9.2,<4.0.0"
 aioitertools = ">=0.5.1,<1.0.0"
-boto3 = {version = ">=1.36.0,<1.36.2", optional = true, markers = "extra == \"boto3\""}
-botocore = ">=1.36.0,<1.36.2"
+boto3 = {version = ">=1.36.20,<1.36.24", optional = true, markers = "extra == \"boto3\""}
+botocore = ">=1.36.20,<1.36.24"
 jmespath = ">=0.7.1,<2.0.0"
 multidict = ">=6.0.0,<7.0.0"
 python-dateutil = ">=2.1,<3.0.0"
@@ -42,8 +42,8 @@ urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >
 wrapt = ">=1.10.10,<2.0.0"
 
 [package.extras]
-awscli = ["awscli (>=1.37.0,<1.37.2)"]
-boto3 = ["boto3 (>=1.36.0,<1.36.2)"]
+awscli = ["awscli (>=1.37.20,<1.37.24)"]
+boto3 = ["boto3 (>=1.36.20,<1.36.24)"]
 
 [[package]]
 name = "aiofiles"
@@ -234,17 +234,17 @@ tests-mypy = ["mypy (>=1.11.1)", "pytest-mypy-plugins"]
 
 [[package]]
 name = "boto3"
-version = "1.36.1"
+version = "1.36.23"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "boto3-1.36.1-py3-none-any.whl", hash = "sha256:eb21380d73fec6645439c0d802210f72a0cdb3295b02953f246ff53f512faa8f"},
-    {file = "boto3-1.36.1.tar.gz", hash = "sha256:258ab77225a81d3cf3029c9afe9920cd9dec317689dfadec6f6f0a23130bb60a"},
+    {file = "boto3-1.36.23-py3-none-any.whl", hash = "sha256:d59642672b1f35f55f47b317693241ce53333816f47c9e72fcc8fd0e9adc6a87"},
+    {file = "boto3-1.36.23.tar.gz", hash = "sha256:006800604c34382873521b20890b758eea7109d699696ece932131259d0a4658"},
 ]
 
 [package.dependencies]
-botocore = ">=1.36.1,<1.37.0"
+botocore = ">=1.36.23,<1.37.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.11.0,<0.12.0"
 
@@ -253,13 +253,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.36.1"
+version = "1.36.23"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "botocore-1.36.1-py3-none-any.whl", hash = "sha256:dec513b4eb8a847d79bbefdcdd07040ed9d44c20b0001136f0890a03d595705a"},
-    {file = "botocore-1.36.1.tar.gz", hash = "sha256:f789a6f272b5b3d8f8756495019785e33868e5e00dd9662a3ee7959ac939bb12"},
+    {file = "botocore-1.36.23-py3-none-any.whl", hash = "sha256:886730e79495a2e153842725ebdf85185c8277cdf255b3b5879cd097ddc7fcc3"},
+    {file = "botocore-1.36.23.tar.gz", hash = "sha256:9feaa2d876f487e718a5fd80a35fa401042b518c0c75117d3e1ea39a567439e7"},
 ]
 
 [package.dependencies]
@@ -268,7 +268,7 @@ python-dateutil = ">=2.1,<3.0.0"
 urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""}
 
 [package.extras]
-crt = ["awscrt (==0.23.4)"]
+crt = ["awscrt (==0.23.8)"]
 
 [[package]]
 name = "certifi"
@@ -1281,4 +1281,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "09d61a61fbf06c5bc48a91df4a54ad2e3f75716c0ef40653fb52cc4049fca91b"
+content-hash = "fda3bed58d54999004025bfa7adf2b98539095822c80b48cf8a3c10e6964c6bd"

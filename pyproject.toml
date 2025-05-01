@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-lxml = {version="^5.3.2", extras = ["html_clean"]}
+lxml = {version="^5.4.0", extras = ["html_clean"]}
 requests = "^2.26.0"
 requests_toolbelt = "^1.0.0"
 aioboto3 = "^14.1.0"
